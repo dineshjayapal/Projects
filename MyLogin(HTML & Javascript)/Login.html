@@ -1,0 +1,88 @@
+<!doctype html>
+    <head>
+        <title>Login page</title>
+    </head>
+    <style>
+        Body{
+            font-family:calibri,Helvetica,sans-serif;
+            background-color: rgb(209, 195, 195);
+        }
+        input[type=text],input[type=password]{
+            width: 50%;
+            margin: 8px 0;
+            padding: 12px 20px;
+            display: inline-block;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .container{
+            width:450px;
+            height: 200px;
+            margin:auto;
+            border-radius: 25px;
+            background-color: lightblue;
+        }.container .btn{
+            margin-left: 10%;
+            transform: translateX(-50%);
+            width: 75px;
+            height: 20px;
+            border: none;
+            outline: none;
+            background:darkgoldenrod;
+            cursor: pointer;
+            font-size: 12px;
+            text-transform: uppercase;
+            color: black;
+            border-radius: 4px;
+            transition: .3s;
+
+        }.container .cncl{
+            margin-left: 5%;
+            transform: translateX(-50%);
+            width: 75px;
+            height: 20px;
+            border: none;
+            outline: none;
+            background:darkgoldenrod;
+            cursor: pointer;
+            font-size: 12px;
+            text-transform: uppercase;
+            color: black;
+            border-radius: 4px;
+            transition: .3s;
+
+        }.header{
+            text-align: center;
+            padding: 75px;
+        }
+        </style>
+    <body>
+        <center><h1>Login Page</h1></center>
+        <div class="container" align="center">
+        <form name="login">
+            <label>Username</label><br><input type="text" placeholder="Enter username" name="userid"/required><br>
+            <label>Password</label><br><input type="password"placeholder="Enter password" name="pswrd"/required><br>
+            <input type="button" onclick="check(this.form)" class="btn" value="Login"/>
+            <input type="reset" class="cncl"value="Cancel"/></form>
+            <script language="javascript">
+            function check(form)
+                {
+                      if(form.userid.value == "dinesh" && form.pswrd.value == "hello")  {
+                        alert("Login successfully")
+                            window.open('welcome.html')
+                         } else if((form.userid.value==""||form.userid.value!="dinesh")&& form.pswrd.value=="hello"){   
+                            if(form.userid.value==""){ 
+                            alert("username required")}else{alert("incorrect username")} }
+                             else if(form.userid.value=="dinesh"&&(form.pswrd.value==""||form.pswrd.value!="hello")){
+                                if(form.pswrd.value==""){ 
+                                alert("password required")}else{alert("incorrect password")}
+                             }else if(form.userid.value==""&&form.pswrd.value==""){
+                                 alert("fill username and password...")
+                             }
+                             else{
+                                alert("Both username and password are incorrect...")
+                             }
+                }
+                </script></div>
+     </body>
+</html>
